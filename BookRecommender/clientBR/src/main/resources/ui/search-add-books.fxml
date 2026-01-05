@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bookrecommender.ui.SearchAddBooksController" spacing="10" style="-fx-padding: 16;">
+    <Label fx:id="libraryNameLabel" style="-fx-font-size:18; -fx-font-weight:bold;" text="Aggiungi libri alla libreria"/>
+    
+    <!-- Ricerca libri -->
+    <Label style="-fx-font-weight:bold;" text="Cerca libri da aggiungere:"/>
+    <GridPane hgap="8" vgap="8">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="20"/>
+            <ColumnConstraints percentWidth="30"/>
+            <ColumnConstraints percentWidth="20"/>
+        </columnConstraints>
+        <Label text="Titolo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="searchTitolo" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Button text="Cerca titolo" onAction="#onSearchByTitle" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        
+        <Label text="Autore:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="searchAutore" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button text="Cerca autore" onAction="#onSearchByAuthor" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        
+        <Label text="Anno:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="searchAnno" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Button text="Cerca autore+anno" onAction="#onSearchByAuthorAndYear" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    </GridPane>
+    
+    <Separator/>
+    
+    <!-- Tabella libri trovati -->
+    <Label style="-fx-font-weight:bold;" text="Risultati ricerca (seleziona i libri da aggiungere):"/>
+    <TableView fx:id="booksTable" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="colTitolo" text="Titolo" prefWidth="200"/>
+            <TableColumn fx:id="colAutore" text="Autore" prefWidth="150"/>
+            <TableColumn fx:id="colAnno" text="Anno" prefWidth="80"/>
+            <TableColumn fx:id="colGenere" text="Genere" prefWidth="120"/>
+            <TableColumn fx:id="colDescrizione" text="Descrizione" prefWidth="300"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="8">
+        <Button text="Aggiungi selezionati alla libreria" onAction="#onAddSelectedBooks"/>
+        <Button text="Chiudi" onAction="#onClose"/>
+    </HBox>
+    
+    <Label fx:id="statusLabel" style="-fx-text-fill: blue;"/>
+</VBox>

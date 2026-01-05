@@ -1,0 +1,11 @@
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\dao\BookDAO.java
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\dao\DBManager.java
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\dao\LibraryDAO.java
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\dao\RatingDAO.java
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\dao\SuggestionDAO.java
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\dao\UserDAO.java
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\model\Libro.java
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\ServerBR.java
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\tools\CreateDB.java
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\tools\ImportBooksCsv.java
+C:\Users\anton\Desktop\BookRecommenderDBPatchedv2\BookRecommenderDBPatched\BookRecommenderDBPatched\BookRecommender\serverBR\src\main\java\com\bookrecommender\server\tools\InsertDummyBook.java

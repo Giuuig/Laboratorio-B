@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bookrecommender.ui.RecommendationsDialogController" spacing="10" style="-fx-padding: 16;">
+    
+    <Label style="-fx-font-size:16; -fx-font-weight:bold;" text="Suggerisci libri"/>
+    
+    <TitledPane text="Libro selezionato" expanded="false">
+        <content>
+            <GridPane hgap="8" vgap="6">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="30"/>
+                    <ColumnConstraints percentWidth="70"/>
+                </columnConstraints>
+                <Label text="Titolo:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Label fx:id="selectedBookTitle" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Autore:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Label fx:id="selectedBookAuthor" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            </GridPane>
+        </content>
+    </TitledPane>
+    
+    <Label style="-fx-font-weight:bold;" text="Seleziona lo slot e assegna un libro dalla tabella:"/>
+
+    <fx:define>
+        <ToggleGroup fx:id="slotToggle" />
+    </fx:define>
+    <VBox spacing="6" style="-fx-padding:6; -fx-background-color:#f6f6f6; -fx-border-color:#ddd; -fx-border-radius:4; -fx-background-radius:4;">
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <RadioButton text="Slot 1" toggleGroup="$slotToggle" fx:id="slot1" selected="true"/>
+            <RadioButton text="Slot 2" toggleGroup="$slotToggle" fx:id="slot2"/>
+            <RadioButton text="Slot 3" toggleGroup="$slotToggle" fx:id="slot3"/>
+        </HBox>
+        <GridPane hgap="8" vgap="6">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="15"/>
+                <ColumnConstraints percentWidth="85"/>
+            </columnConstraints>
+            <Label text="Slot 1:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label fx:id="slotLabel1" text="(vuoto)" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Slot 2:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Label fx:id="slotLabel2" text="(vuoto)" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Slot 3:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <Label fx:id="slotLabel3" text="(vuoto)" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        </GridPane>
+    </VBox>
+    
+    <Separator/>
+    
+    <Label style="-fx-font-weight:bold;" text="Libri disponibili (ricerca):"/>
+    
+    <HBox spacing="8">
+        <TextField fx:id="bookSearchField" promptText="Cerca libro..." prefWidth="400"/>
+        <Button text="Cerca" onAction="#onSearchBooks"/>
+    </HBox>
+    
+    <TableView fx:id="booksTable" prefHeight="200.0">
+        <columns>
+            <TableColumn fx:id="colTitolo" text="Titolo" prefWidth="200"/>
+            <TableColumn fx:id="colAutore" text="Autore" prefWidth="150"/>
+            <TableColumn fx:id="colAnno" text="Anno" prefWidth="80"/>
+        </columns>
+    </TableView>
+    <HBox spacing="8">
+        <Button text="Assegna allo slot selezionato" onAction="#onAssignToSlot"/>
+        <Label text="(Seleziona una riga e uno slot)" style="-fx-text-fill: #666;"/>
+    </HBox>
+    
+    <HBox spacing="8" style="-fx-alignment:center-right;">
+        <Button text="Salva suggerimenti" onAction="#onSaveRecommendations" style="-fx-padding:8;"/>
+        <Button text="Annulla" onAction="#onCancel" style="-fx-padding:8;"/>
+    </HBox>
+</VBox>

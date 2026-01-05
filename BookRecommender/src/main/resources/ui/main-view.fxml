@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.bookrecommender.ui.MainController">
+    <top>
+        <HBox spacing="8" style="-fx-padding:10;">
+            <Label text="Email:" />
+            <TextField fx:id="emailField" promptText="email"/>
+            <Label text="Password:" />
+            <PasswordField fx:id="passwordField" promptText="password"/>
+            <Button text="Login" onAction="#onLogin"/>
+            <Button text="Registrati" onAction="#onRegister"/>
+            <Label fx:id="statusLabel" />
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="8" style="-fx-padding:10;">
+            <TitledPane text="Cerca Libri" expanded="true">
+                <content>
+                    <HBox spacing="8">
+                        <TextField fx:id="titoloField" promptText="Titolo"/>
+                        <TextField fx:id="autoreField" promptText="Autore"/>
+                        <TextField fx:id="annoField" promptText="Anno"/>
+                        <Button text="Cerca" onAction="#onSearch"/>
+                    </HBox>
+                </content>
+            </TitledPane>
+            <TableView fx:id="table">
+                <columns>
+                    <TableColumn text="Titolo" fx:id="colTitolo"/>
+                    <TableColumn text="Autore" fx:id="colAutore"/>
+                    <TableColumn text="Anno" fx:id="colAnno"/>
+                </columns>
+            </TableView>
+            <TitledPane text="Valuta Libro">
+                <content>
+                    <HBox spacing="8">
+                        <Label text="ID Libro:"/>
+                        <TextField fx:id="libroIdField" prefWidth="80"/>
+                        <Label text="Voto (1-5):"/>
+                        <TextField fx:id="votoField" prefWidth="60"/>
+                        <TextField fx:id="commentoField" promptText="Commento (opzionale)" prefWidth="300"/>
+                        <Button text="Invia" onAction="#onRate"/>
+                    </HBox>
+                </content>
+            </TitledPane>
+        </VBox>
+    </center>
+</BorderPane>

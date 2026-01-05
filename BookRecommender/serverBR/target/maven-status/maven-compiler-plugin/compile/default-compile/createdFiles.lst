@@ -1,0 +1,12 @@
+com\bookrecommender\server\tools\InsertDummyBook.class
+com\bookrecommender\server\dao\RatingDAO.class
+com\bookrecommender\server\ServerBR$1.class
+com\bookrecommender\server\dao\SuggestionDAO.class
+com\bookrecommender\server\dao\UserDAO.class
+com\bookrecommender\server\ServerBR.class
+com\bookrecommender\server\dao\LibraryDAO.class
+com\bookrecommender\server\dao\DBManager.class
+com\bookrecommender\server\tools\CreateDB.class
+com\bookrecommender\server\dao\BookDAO.class
+com\bookrecommender\server\model\Libro.class
+com\bookrecommender\server\tools\ImportBooksCsv.class

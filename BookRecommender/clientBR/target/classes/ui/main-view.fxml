@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.bookrecommender.ui.MainController">
+    <top>
+        <HBox spacing="8" style="-fx-padding:10;">
+            <Label fx:id="statusLabel" text="Benvenuto! Accedi per iniziare" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Login/Registrati" onAction="#onOpenLoginDialog"/>
+            <Button text="Logout" onAction="#onLogout"/>
+        </HBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Ricerca">
+                <VBox spacing="10" style="-fx-padding:10;">
+                    <GridPane hgap="8" vgap="8">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="20"/>
+                            <ColumnConstraints percentWidth="30"/>
+                            <ColumnConstraints percentWidth="20"/>
+                        </columnConstraints>
+                        <Label text="Titolo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="advSearchTitolo" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <Button text="Cerca titolo" onAction="#onCercaTitolo" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                        
+                        <Label text="Autore:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <TextField fx:id="advSearchAutore" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Button text="Cerca autore" onAction="#onCercaAutore" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                        
+                        <Label text="Anno:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <TextField fx:id="advSearchAnno" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <Button text="Cerca autore+anno" onAction="#onCercaAutoreAnno" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                    </GridPane>
+                    <Separator/>
+                    <TableView fx:id="advSearchTable" prefHeight="320.0">
+                        <placeholder>
+                            <Label text=""/>
+                        </placeholder>
+                        <columns>
+                            <TableColumn fx:id="advColTitolo" text="Titolo" prefWidth="200"/>
+                            <TableColumn fx:id="advColAutore" text="Autore" prefWidth="150"/>
+                            <TableColumn fx:id="advColAnno" text="Anno" prefWidth="80"/>
+                            <TableColumn fx:id="advColGenere" text="Genere" prefWidth="120"/>
+                            <TableColumn fx:id="advColDescrizione" text="Descrizione" prefWidth="300"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="8">
+                        <Button text="Apri dettagli" onAction="#onOpenAdvDetails"/>
+                        <Button fx:id="gestisciLibrerieBtn" text="Gestisci librerie" onAction="#onOpenLibraryManager"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

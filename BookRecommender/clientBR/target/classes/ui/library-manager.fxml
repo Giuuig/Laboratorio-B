@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bookrecommender.ui.LibraryManagerController" spacing="10" style="-fx-padding: 16;">
+    <Label style="-fx-font-size:18; -fx-font-weight:bold;" text="Gestione Librerie"/>
+    
+    <!-- Crea nuova libreria -->
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Label text="Nuova libreria:"/>
+        <TextField fx:id="newLibraryName" promptText="Nome libreria" prefWidth="250"/>
+        <Button text="Crea" onAction="#onQuickCreateLibrary"/>
+    </HBox>
+    
+    <Separator/>
+    
+    <!-- Seleziona libreria -->
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Label text="Libreria:"/>
+        <ComboBox fx:id="librariesCombo" prefWidth="300" promptText="Seleziona libreria..." onAction="#onLibrarySelected"/>
+        <Button text="Cerca e aggiungi libri" onAction="#onSearchAndAddBooks"/>
+    </HBox>
+    
+    <Separator/>
+    
+    <!-- Cerca libri nella libreria -->
+    <Label style="-fx-font-weight:bold;" text="Libri nella libreria selezionata:"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <TextField fx:id="searchBookField" promptText="Cerca nella libreria..." prefWidth="300"/>
+        <Button text="Cerca" onAction="#onSearchInLibrary"/>
+    </HBox>
+    
+    <!-- Tabella libri nella libreria -->
+    <TableView fx:id="booksAvailableTable" prefHeight="250">
+        <columns>
+            <TableColumn fx:id="colTitolo" text="Titolo" prefWidth="200"/>
+            <TableColumn fx:id="colAutore" text="Autore" prefWidth="150"/>
+            <TableColumn fx:id="colAnno" text="Anno" prefWidth="80"/>
+            <TableColumn fx:id="colGenere" text="Genere" prefWidth="120"/>
+            <TableColumn fx:id="colDescrizione" text="Descrizione" prefWidth="300"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="8">
+        <Button text="Dettagli / Recensisci" onAction="#onOpenBookDetails"/>
+        <Button text="Libri raccomandati" onAction="#onOpenRecommendations"/>
+    </HBox>
+    
+    <Label fx:id="statusLabel" style="-fx-text-fill: blue;"/>
+</VBox>

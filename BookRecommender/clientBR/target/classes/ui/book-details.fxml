@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bookrecommender.ui.BookDetailsController" spacing="10" style="-fx-padding: 16;">
+    <Label fx:id="titleLabel" style="-fx-font-size:18; -fx-font-weight:bold;" text="Dettagli libro"/>
+    <GridPane hgap="8" vgap="6">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="30"/>
+            <ColumnConstraints percentWidth="70"/>
+        </columnConstraints>
+        <Label text="Titolo:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label fx:id="titoloValue" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="Autore:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label fx:id="autoreValue" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="Anno:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label fx:id="annoValue" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Genere:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label fx:id="genereValue" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="Descrizione:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextArea fx:id="descrizioneValue" editable="false" wrapText="true" prefRowCount="4" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <Label text="Valutazione media:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <Label fx:id="mediaValue" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <Label text="Numero recensioni:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <Label fx:id="numRecensioniValue" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <TitledPane fx:id="valutazioneTitledPane" text="Valutazione libro (5 criteri)">
+        <content>
+            <VBox spacing="10" style="-fx-padding:10;">
+                <GridPane hgap="8" vgap="8">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="30"/>
+                        <ColumnConstraints percentWidth="70"/>
+                    </columnConstraints>
+                    <Label text="Stile:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="comboStile" prefWidth="150" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    
+                    <Label text="Contenuto:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="comboContenuto" prefWidth="150" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    
+                    <Label text="Gradevolezza:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="comboGradevolezza" prefWidth="150" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    
+                    <Label text="Originalità:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="comboOriginalita" prefWidth="150" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                    
+                    <Label text="Edizione:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="comboEdizione" prefWidth="150" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    
+                    <Label text="Note:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="noteValutazione" wrapText="true" prefRowCount="3" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                </GridPane>
+                <HBox spacing="8">
+                    <Button text="Salva valutazione" onAction="#onSaveRating"/>
+                </HBox>
+            </VBox>
+        </content>
+    </TitledPane>
+
+    <TitledPane text="Recensioni">
+        <content>
+            <ListView fx:id="reviewsList"/>
+        </content>
+    </TitledPane>
+</VBox>
